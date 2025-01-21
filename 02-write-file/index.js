@@ -14,7 +14,6 @@ console.log(
 
 rl.on('line', (input) => {
   if (input.trim().toLowerCase() === 'exit') {
-    console.log('Пока!');
     rl.close();
   } else {
     fs.appendFile(filePath, input + '\n', (err) => {
@@ -27,5 +26,6 @@ rl.on('line', (input) => {
 });
 
 rl.on('close', () => {
+  console.log('Пока!');
   process.exit(0);
 });
